@@ -8,9 +8,6 @@ _(approx. 2-3 pages)_
 
 
 ### Domain Background
-_(approx. 1-2 paragraphs)_
-
-In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
 #### Domain Background of Machine Learining in manufacturing testing.
 The proposal domain is in the manufacturing testing field. In most of the mass production manufacturing, testing are part of the manufacturing process which help to ensure product quality and reliability. At the same time, testing also involve higher cost to the manufacturer and less productive. 
@@ -48,6 +45,8 @@ We will compare the different model in the project to find out which one best pe
 _(approx. 2-3 paragraphs)_
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+
+The datasets is coming from Kaggle competition - [Mercedez-Benz Greener Manufacturing] (https://www.kaggle.com/c/mercedes-benz-greener-manufacturing)
 
 ### Solution Statement
 _(approx. 1 paragraph)_
