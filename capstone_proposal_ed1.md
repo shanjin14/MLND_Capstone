@@ -12,13 +12,37 @@ _(approx. 1-2 paragraphs)_
 
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
+#### Domain Background of Machine Learining in manufacturing testing.
+The proposal domain is in the manufacturing testing field. In most of the mass production manufacturing, testing are part of the manufacturing process which help to ensure product quality and reliability. At the same time, testing also involve higher cost to the manufacturer and less productive. 
 
+The proposed project is to examine the prediction of the testing time required based on the all the available features.
+
+The dataset used is from following Kaggle competitions:
+https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/
+
+#### Why choose this topic? 
+I'm interested in how we can bring machine learning to help manufacturing to be more productive or simply better.
 
 
 ### Problem Statement
 _(approx. 1 paragraph)_
 
 In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
+
+The problem we tried to solved is to predict the test time (the 'y') required based on all the feature provided (total 378 features).
+
+#### Measurement 
+The prediction is scored based on R^2 value (Coefficient of Determination).
+
+#### Replicability
+As the data are relatively structured, the problem and solution can be reproduced in the model if we set the random seed.
+
+The potential solutions can be following:
+1. Gradient boosted tree 
+2. Random Forest
+We will compare the different model in the project to find out which one best perform in the prediction.
+
+
 
 ### Datasets and Inputs
 _(approx. 2-3 paragraphs)_
