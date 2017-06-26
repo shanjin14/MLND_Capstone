@@ -55,7 +55,7 @@ Gradient boosting regression is one of the most popular library in Kaggle. Based
 
 One of the key factors to mentioned in the solutions is the pre-processing of the data. As all the independent variables in the datasets are catgorical. We would need to do one-hot-encoding to all the variable. A good explaination of one-hot-encoding can be found [here](https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science)^2^.
 
-Apart from that, since we are working with 376 features. Apart from correlation analysis, we could consider feature engineering such as Principal Component Analysis(PCA)^3^ to identify if have any principal component that we could use to reduce the feature space.
+Besides, since we are working with 376 features, we could consider feature engineering such as Principal Component Analysis(PCA)^3^ to identify if have any principal component that we could use to reduce the feature space.
 
 Another approach to explore is Multiple Correspondence Analysis (MCA)^4^. Based on one of the exploratory data analysis done by kaggler community, we could use the technique to identify the key components needed to capture most of the "y" variable's variance^5^
 
