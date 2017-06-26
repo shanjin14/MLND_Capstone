@@ -44,6 +44,8 @@ The dataset has the testing time as the dependent variable (the "y") and 376 fea
 All 376 features are categorical, while the dependent variable is continuous.
 The provided dataset has anonymized the all the features. As such, we would need to perform some clustering analysis and other exploratory data analysis to understand more about all the features, such as correlation between features.
 
+There are 2409 instance of data.
+
 
 ### Solution Statement
 _(approx. 1 paragraph)_
