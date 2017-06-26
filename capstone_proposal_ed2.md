@@ -44,7 +44,7 @@ The dataset has the testing time as the dependent variable (the "y") and 376 fea
 All 376 features are categorical, while the dependent variable is continuous.
 The provided dataset has anonymized the all the features. As such, we would need to perform some clustering analysis and other exploratory data analysis to understand more about all the features, such as correlation between features.
 
-There are 2409 instance of data.
+There are 4209 instance inside the datasets.
 
 
 ### Solution Statement
@@ -52,6 +52,13 @@ _(approx. 1 paragraph)_
 
 As mentioned in previous session, the proposed solutions are using gradient boosting regession. 
 Gradient boosting regression is one of the most popular library in Kaggle. Based on [empirical comparison of supervised learning algorithm](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.60.3232), it shows that gradient boosting tree is one of the best learning algorithm^1^.
+
+One of the key factors to mentioned in the solutions is the pre-processing of the data. As all the independent variables in the datasets are catgorical. We would need to do one-hot-encoding to all the variable. A good explaination of one-hot-encoding can be found [here](https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science)^2^.
+
+Apart from that, since we are working with 376 features. Apart from correlation analysis, we could consider feature engineering such as Principal Component Analysis(PCA)^3^ to identify if have any principal component that we could use to reduce the feature space.
+
+Another approach to explore is Multiple Correspondence Analysis (MCA)^4^. Based on one of the exploratory data analysis done by kaggler community, we could use the technique to identify the key components needed to capture most of the "y" variable's variance^5^
+
 
 
 ### Benchmark Model
@@ -95,6 +102,11 @@ Finally, based on the model, generate the final prediction.
 -----------
 ### Footnotes
 1. [What is better: gradient-boosted trees, or a random forest?](http://fastml.com/what-is-better-gradient-boosted-trees-or-random-forest/)
+2. [What is One Hot Encoding and when is it used in data science?](https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science)
+3. [Principal Component Analysis](https://en.wikipedia.org/wiki/Principal_component_analysis)
+4. [Multiple Correspondence Analysis](https://en.wikipedia.org/wiki/Multiple_correspondence_analysis)
+5. [EDA and Visualisation](https://www.kaggle.io/svf/1281435/ded107c7ae67f91b9c31e9835cbaf549/__results__.html#new-multiple-correspondence-analysis-mca)
+
 
 
 **Before submitting your proposal, ask yourself. . .**
