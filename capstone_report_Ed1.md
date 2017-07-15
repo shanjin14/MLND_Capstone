@@ -7,9 +7,6 @@ July 15th, 2017
 _(approx. 1-2 pages)_
 
 ### Project Overview
-In this section, look to provide a high-level overview of the project in layman’s terms. Questions to ask yourself when writing this section:
-- _Has an overview of the project been provided, such as the problem domain, project origin, and related datasets or input data?_
-- _Has enough background information been given so that an uninformed reader would understand the problem domain and following problem statement?_
 
 #### Domain Background of Machine Learining in manufacturing testing.
 The proposal domain is in the manufacturing testing field. In most of the mass production manufacturing, testing are part of the manufacturing process which help to ensure product quality and reliability. At the same time, testing also involve higher cost to the manufacturer and time consuming. 
@@ -19,10 +16,7 @@ We will use the data from this competition to examine different machine learning
 
 
 ### Problem Statement
-In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
-- _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
-- _Have you thoroughly discussed how you will attempt to solve the problem?_
-- _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
+
 
 The problem we tried to solved is to predict the test time (the 'y') required based on all the featured provides (total 376 features).
 
@@ -36,14 +30,26 @@ After some research in the community discussion, one of the way that many data s
 
 #### Potential solution
 
-The potential solution would be using gradient boosting regression tree.
-During the development, we will explore other model possiblity.
+The potential solution would be using gradient boosting regression tree. During the gradient boosting regression tree model building, I explore two different transformation --label encoding for all the multi-categorical variables.
+
+I also built a random forest as a benchmark model to compare the performance of gradient boosting.
+
+Besides, I also built a stacked model that combine lasso, gradient boosting and random forest for comparison.
+
+Apart from using the cross-validation R^2 score from our code, I also use to Kaggle submission to cross-check the performance of the model.
+
+
 
 
 ### Metrics
 In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
+
+#### Selected Metric
+The proposed metric is R^2 value. Based on the predicted value in test set to know the prediction capability of the model.
+
+#### Explaing R^2
 
 
 ## II. Analysis
