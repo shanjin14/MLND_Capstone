@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
-Joe Udacity  
-December 31st, 2050
+George Seah 
+July 15th, 2017
 
 ## I. Definition
 _(approx. 1-2 pages)_
@@ -11,11 +11,34 @@ In this section, look to provide a high-level overview of the project in laymanâ
 - _Has an overview of the project been provided, such as the problem domain, project origin, and related datasets or input data?_
 - _Has enough background information been given so that an uninformed reader would understand the problem domain and following problem statement?_
 
+#### Domain Background of Machine Learining in manufacturing testing.
+The proposal domain is in the manufacturing testing field. In most of the mass production manufacturing, testing are part of the manufacturing process which help to ensure product quality and reliability. At the same time, testing also involve higher cost to the manufacturer and time consuming. 
+The proposed project is to examine the prediction of the testing time required based on the all the available features. The proposed project is based on the Kaggle competitions: https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/
+We will use the data from this competition to examine different machine learning method in making prediction.
+
+
+
 ### Problem Statement
 In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
 - _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
 - _Have you thoroughly discussed how you will attempt to solve the problem?_
 - _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
+
+The problem we tried to solved is to predict the test time (the 'y') required based on all the featured provides (total 376 features).
+
+
+#### Measurement 
+Based on the competition request, we found out that the prediction is scored based on R^2 value (Coefficient of Determination), so we will use the same metric to score and compare our model
+
+#### Anonimyzation of the dataset column name and data processing
+As the dataset column name are anonymized, so we wouldn't be able to know the underlying meaning of each variable. It creates some issue for us to understand well the data, such as if we have done the Principal Component Analysis, we wouldn't be able to know what the first component would actually mean.
+After some research in the community discussion, one of the way that many data science expert use in this competition are adding all the Principal component and their original component as part of the features set and select the algorithm, such as gradient boosting or random forest or regularized regression like Lasso that would select through the features set that make best prediction. 
+
+#### Potential solution
+
+The potential solution would be using gradient boosting regression tree.
+During the development, we will explore other model possiblity.
+
 
 ### Metrics
 In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
