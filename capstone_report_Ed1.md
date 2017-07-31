@@ -259,11 +259,7 @@ From this observation, we mostl likely have already slightly over-fitted the dat
 _(approx. 2-3 pages)_
 
 ### Model Evaluation and Validation
-In this section, the final model and any supporting qualities should be evaluated in detail. It should be clear how the final model was derived and why this model was chosen. In addition, some type of analysis should be used to validate the robustness of this model and its solution, such as manipulating the input data or environment to see how the model’s solution is affected (this is called sensitivity analysis). Questions to ask yourself when writing this section:
-- _Is the final model reasonable and aligning with solution expectations? Are the final parameters of the model appropriate?_
-- _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
-- _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
-- _Can results found from the model be trusted?_
+
 
 Based on the cross validation scores, we selected the xgboost with label encoding as the final model as it has the highest R^2 performance scores.
 It has the highest private leaderboard score, indicating that it has better generalization on the unseen data
@@ -271,10 +267,6 @@ It has the highest private leaderboard score, indicating that it has better gene
 
 
 ### Justification
-In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
-- _Are the final results found stronger than the benchmark result reported earlier?_
-- _Have you thoroughly analyzed and discussed the final solution?_
-- _Is the final solution significant enough to have solved the problem?_
 
 #### Benchmark model -- Random Forest
 We run the benchmark model - Random Forest. The results shows that 
@@ -284,18 +276,16 @@ We run the benchmark model - Random Forest. The results shows that
 <Add scatter plot -- actual vs predicted>
 
 
+#### Comparing to the benchmark model
 Comparing our final model results as compare to the benchmark result, we can see that our final selected model performed relatively well compare to the benchmark model.
 
 Based on the current private leaderboard No 1 team results at ____, The final selected model is significant as a starting point model to know what would be the estimate test time would be given the results.
 
 From the data, we've seen one outlier data point we extreme high test time. Based on the unsupervised learning, we found out that it 
-
 Further investigation in such outlier would help us to unveil insight in optimizing the model and the operational issue behind it.
 
 
 ## V. Conclusion
-_(approx. 1-2 pages)_
-
 
 ### Reflection
 
