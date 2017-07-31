@@ -76,26 +76,16 @@ Since we are mainly focus on boosting or ensemble method, all 3 of them should b
 _(approx. 2-4 pages)_
 
 ### Data Exploration
-In this section, you will be expected to analyze the data you are using for the problem. This data can either be in the form of a dataset (or datasets), input data (or input files), or even an environment. The type of data should be thoroughly described and, if possible, have basic statistics and information presented (such as discussion of input features or defining characteristics about the input or environment). Any abnormalities or interesting qualities about the data that may need to be addressed have been identified (such as features that need to be transformed or the possibility of outliers). Questions to ask yourself when writing this section:
-- _If a dataset is present for this problem, have you thoroughly discussed certain features about the dataset? Has a data sample been provided to the reader?_
-- _If a dataset is present for this problem, are statistics about the dataset calculated and reported? Have any relevant results from this calculation been discussed?_
-- _If a dataset is **not** present for this problem, has discussion been made about the input space or input data for your problem?_
-- _Are there any abnormalities or characteristics about the input space or dataset that need to be addressed? (categorical variables, missing values, outliers, etc.)_
 
-
-The dataset provided from the competition has total 376 features. all of them are cateogorical. 
-
-There are 8 variables are multi-categorical, where X4 has the smallest category count at 4 and X0 has the highest category count at 49.
+The dataset provided from the competition has total 376 features. all of them are cateogorical. There are 8 variables are multi-categorical, where X4 has the smallest category count at 4 and X0 has the highest category count at 49.
 
 <Fig 1. add picture of the table of count distinct category >
 
 As we can see from Fig 2. below, all features are anonymized, so we wouldn't be able to know what would be the underlying meaning of each feature.
 
-
 <Fig 2. Add a picture of the visualization of the table set of data>
 
 Besides, we also found some cateogorical variable has only one value. 
-
 
 <Fig 3. Add a visual of the constant variable>
 
@@ -104,17 +94,13 @@ The datasets has split into two separate sets -- training set and test set. Eact
 
 
 ### Exploratory Visualization and Analysis
-In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant characteristic or feature about the dataset or input data?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
 
 #### Start from the "y"
 We start by look at the y by plotting against the ID
 
 <Fig 4. plot ID vs y>
 
-From 
+From the data, there is no obvious relationship between the ID and "Y".
 
 
 #### Looking at the "x"
