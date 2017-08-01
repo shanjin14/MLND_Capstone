@@ -30,9 +30,7 @@ After some research in the community discussion, one of the way that many data s
 The potential solution would be using gradient boosting regression tree. During the gradient boosting regression tree model building, I explore two different transformation --label encoding for all the multi-categorical variables.
 I also built a random forest as a benchmark model to compare the performance of gradient boosting.
 Besides, I also built a stacked model that combine lasso, gradient boosting and random forest for comparison.
-Apart from using the cross-validation R^2 score from our code, I also use to Kaggle submission to cross-check the performance of the model.
-
-
+Apart from using the cross-validation R^2 score from our code, I also use Kaggle submission to cross-check the performance of the model.
 
 
 ### Metrics
@@ -118,21 +116,21 @@ We then look at rest of the binary variables, we also found some variables have 
 Our first intuition from such observation is that some of the variables that has only one categorical value or very small observations can be removed from the data to reduce the dimensionality.
 As those variables least likely will have any value in training the models since they only has one value across the full spectrum of "y".
 
-#### Additional feature extractions
+#### Additional feature engineering
 
+Besides pre-processing the data set, we also applied various feature engineering technique to give more variable options to the model.
+Feature engineering techniqued used includes:
+1. Principal Component Analysis (PCA)
+2. Independent Component Analysis (ICA)
+3. Gaussian Random Projection
+4. Sparse Random Projection
+5. Singular Value Decomposition
 
 ### Algorithms and Techniques
-In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
-- _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
-- _Are the techniques to be used thoroughly discussed and justified?_
-- _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
-
-
 Due to anonymized independent variable, the ensemble method such as xgboost or random forest would be ideal in such situation since we couldnt make any assumption (or bias) behind the data.
 So, we would need to find a algorithm that could help us select the important variables.
 
-
-#### Algorithms and Techniques
+#### Testing various combination of data pre-processing and models
 During the model building, we explore different approach as followings:
 1. Xgboost with one hot encoding of the multi-cateogorical variables. In addition, we run principal component analysis(PCA) and independent component analysis (ICA) and append the new variables into the datasets.
 2. Xgboost with label encoding of the multi-categorical variables. In addition, we run PCA and ICA and append the new variables into the datasets.
@@ -227,6 +225,7 @@ The rationale is that ID should be just an indexing of the each data row and sho
 After running xgboost optimized with number of trees, the result is not good.
 Following are the score for the initial model:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
+| ------------- |:-------------:| -----:|
 | Xgb with OHE 	| 0.6365 | -0.48733 | -0.5714 |
 
 #### Subsequent solution testing  -- Xgboost with label encoding
@@ -234,6 +233,7 @@ Follow on the initial solution, I tried to use label encoding on the dataset wit
 
 The result as following:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
+| ------------- |:-------------:| -----:|
 | Xgb with LE 	| 0.6522 | 0.5648 | 0.5462 |
 
 <Add scatter plot -- actual vs predicted>
@@ -246,7 +246,8 @@ The stacked model is combining various model for the predictions.
 
 The result as following:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Stacked Model |  | 0.5767 | 0.5458 |
+| ------------- |:-------------:| -----:|
+| Stacked Model | 0.65 | 0.5767 | 0.5458 |
 
 One of the interesting observation of the stacked model is that we get better result in both cross validation and public leaderboard scores, but not the private leaderboard.
 From this observation, we mostl likely have already slightly over-fitted the data as compare to the xgboost.
@@ -269,7 +270,8 @@ It has the highest private leaderboard score, indicating that it has better gene
 #### Benchmark model -- Random Forest
 We run the benchmark model - Random Forest. The results shows that 
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Random Forest |  | 0.4963 | 0.4468 |
+| ------------- |:-------------:| -----:|
+| Random Forest | 0.55 | 0.4963 | 0.4468 |
 
 <Add scatter plot -- actual vs predicted>
 
@@ -277,7 +279,7 @@ We run the benchmark model - Random Forest. The results shows that
 #### Comparing to the benchmark model
 Comparing our final model results as compare to the benchmark result, we can see that our final selected model performed relatively well compare to the benchmark model.
 
-Based on the current private leaderboard No 1 team results at ____, The final selected model is significant as a starting point model to know what would be the estimate test time would be given the results.
+Based on the current private leaderboard No 1 team results at 0.5555. The final selected model is significant as a starting point model to know what would be the estimate test time would be given the results.
 
 From the data, we've seen one outlier data point we extreme high test time. Based on the unsupervised learning, we found out that it 
 Further investigation in such outlier would help us to unveil insight in optimizing the model and the operational issue behind it.
@@ -319,6 +321,9 @@ Besides, Another approach that I think that may worth to test is deep learning. 
 4. [Why Stacked Model Perform Effective Collective Classfication] (https://kdl.cs.umass.edu/papers/fast-jensen-icdm2008.pdf)
 5. [Stacked Regression] (http://statistics.berkeley.edu/sites/default/files/tech-reports/367.pdf)
 6. [t-distributed Stochastic Neighbor Embedding Wikipedia] (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
+
+Besides above references, the coding and development has referred a lot of public sharing in kaggle such as :
+7. [Kaggle - Mercedes-Benz Greener Manufacturing Kernels] (https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/kernels)
 
 **Before submitting, ask yourself. . .**
 
