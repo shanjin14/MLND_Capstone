@@ -64,7 +64,7 @@ For the coming discussion, I will focus the discussion on three of the most comm
 	It capture the propotion of variance that explained by the model. One of the key feature of R^2 is that it could be negative value. It means that the total predicted error from the model are higher than the total variance of the data.
 
 	
-Since we are mainly focus on boosting or ensemble method, all 3 of them should be feasible for the modelling.If we plan to use any model that are using gradient descent algorithm such as Neural Network, I think MSE is more appropriate as it is mathematically differentiable.
+Since we are mainly focus on boosting or ensemble method, all 3 of them should be feasible for the modelling. If we plan to use any model that are using gradient descent algorithm such as Neural Network, I think MSE is more appropriate as it is mathematically differentiable.
 
 
 ## II. Analysis
@@ -269,9 +269,9 @@ The result as following:
 | Stacked Model | 0.65 | 0.5767 | 0.5458 |
 
 One of the interesting observation of the stacked model is that we get better result in both cross validation and public leaderboard scores, but not the private leaderboard.
-From this observation, we mostl likely have already slightly over-fitted the data as compare to the xgboost.
+From this observation, it may imply that we may have already over-fitted the data as compare to the xgboost.
 
-<Add scatter plot -- actual vs predicted>
+<img src="http://instanas.com/gh_work/Stacked.png">
 
 
 
@@ -280,7 +280,9 @@ From this observation, we mostl likely have already slightly over-fitted the dat
 ### Model Evaluation and Validation
 
 Based on the cross validation scores, we selected the xgboost with label encoding as the final model as it has the highest R^2 performance scores.
-It has the highest private leaderboard score, indicating that it has better generalization on the unseen data
+It has the highest private leaderboard score, indicating that it has better generalization on the unseen data.
+Besides, it is generally more simpler to undersand compare to stacked model.
+
 
 
 ### Justification
@@ -301,6 +303,9 @@ Comparing our final model results as compare to the benchmark result, we can see
 Based on the current private leaderboard No 1 team results at 0.5555, the final selected model is considered acceptable as a starting point model to know what would be the estimated test time would be given all the variables.
 
 From the data, we've seen one outlier data point with extreme high test time. Further investigation in such outlier would help us to unveil insight in optimizing the model and the operational issue behind it.
+
+One of the interesting observation is the Y_Actual vs Y_Predicted scatter plot for all 3 models vs benchmark model. We can see that our selected model has predicted lower value in "y" around 130 and above. Meanwhile, Random Forest seems do a better prediction on training set.
+But, the end validation score in private leaderboard shows that the result is lower compare to gradient boosting. It means that the random forest may already have overfitted the data.
 
 
 ## V. Conclusion
