@@ -225,8 +225,9 @@ The rationale is that ID should be just an indexing of the each data row and sho
 
 After running xgboost optimized with number of trees, the result is not good.
 Following are the score for the initial model:
+
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| -----:| -----:|
 | Xgb with OHE 	| 0.6365 | -0.48733 | -0.5714 |
 
 <img src="http://instanas.com/gh_work/XGB_OHE.png">
@@ -236,8 +237,9 @@ Y_Actual vs Y_Predicted in train data
 Follow on the initial solution, I tried to use label encoding on the dataset with ICA and PCA. 
 
 The result as following:
+
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| -----:| -----:|
 | Xgb with LE 	| 0.6522 | 0.5648 | 0.5462 |
 
 <img src="http://instanas.com/gh_work/XGB_LE.png">
@@ -250,8 +252,9 @@ From the above results, one of the possible reason that we would see such improv
 The stacked model is combining various model for the predictions.
 
 The result as following:
+
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| -----:| -----:|
 | Stacked Model | 0.65 | 0.5767 | 0.5458 |
 
 One of the interesting observation of the stacked model is that we get better result in both cross validation and public leaderboard scores, but not the private leaderboard.
@@ -272,9 +275,10 @@ It has the highest private leaderboard score, indicating that it has better gene
 ### Justification
 
 #### Benchmark model -- Random Forest
-We run the benchmark model - Random Forest. The results shows that 
+We run the benchmark model - Random Forest. The results shows that:
+
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| -----:| -----:|
 | Random Forest | 0.55 | 0.4963 | 0.4468 |
 
 <Add scatter plot -- actual vs predicted>
