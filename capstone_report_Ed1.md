@@ -87,12 +87,20 @@ The dataset provided from the competition has total 376 features. all of them ar
 
 
 <img src="http://instanas.com/gh_work/DataSample.JPG">
+
 As we can see from table above, we can see that all features are anonymized.So, we wouldn't be able to know what would be the underlying meaning of each feature.
+
+We plotted the multi-categorical variable frequency count, we can see that most of them are highly skewed towards few category with the extreme cases like X4, which has most of the sample with one value only.
+
+<img src="http://instanas.com/gh_work/Freq/X0Freq.JPG">  <img src="http://instanas.com/gh_work/Freq/X1Freq.JPG">   
+<img src="http://instanas.com/gh_work/Freq/X2Freq.JPG">  <img src="http://instanas.com/gh_work/Freq/X3Freq.JPG">   
+<img src="http://instanas.com/gh_work/Freq/X4Freq.JPG">  <img src="http://instanas.com/gh_work/Freq/X5Freq.JPG">   
+<img src="http://instanas.com/gh_work/Freq/X6Freq.JPG">  <img src="http://instanas.com/gh_work/Freq/X8Freq.JPG">   
 
 <img src="http://instanas.com/gh_work/0_1_Count.png">
 Count of binary value by each variable
 
-As we can see from the above graph, we also have some cateogorical variable has only one value. 
+For rest of the binary variables, we can see that we have some cateogorical variable has only one value. 
 
 Finally, the datasets has split into two separate sets -- training set and test set. Eact set of data has total 4209 datapoint.
 
@@ -106,7 +114,7 @@ We start by look at the y by plotting against the ID
 <img src="http://instanas.com/gh_work/YvsIDJointPlot.png">
 Y vs ID joint plot
 
-From the data, there is no obvious relationship between the ID and "Y".
+From the data, there is no obvious relationship between the ID and "Y". But, we can see that there is a downward trend as ID gets higher number.
 
 
 #### Looking at the "x"
@@ -116,6 +124,7 @@ From the "x", we start by looking at the 8 multi-categorical variables. As we ca
 We then look at rest of the binary variables, we also found some variables have only one value.
 
 Our first intuition from such observation is that some of the variables that has only one categorical value or very small observations can be removed from the data to reduce the dimensionality.
+
 As those variables least likely will have any value in training the models since they only has one value across the full spectrum of "y".
 
 #### Additional feature engineering
@@ -127,6 +136,7 @@ Feature engineering techniqued used includes:
 3. Gaussian Random Projection
 4. Sparse Random Projection
 5. Singular Value Decomposition
+
 
 ### Algorithms and Techniques
 Due to anonymized independent variable, the ensemble method such as xgboost or random forest would be ideal in such situation since we couldnt make any assumption (or bias) behind the data.
