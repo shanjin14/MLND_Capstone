@@ -353,4 +353,9 @@ Besides, Another approach that I think that may worth to test is deep learning. 
 Besides above references, the coding and development has referred a lot of public sharing in kaggle such as :
 
 7. [Kaggle - Mercedes-Benz Greener Manufacturing Kernels] (https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/kernels)
+   Kernel that referenced in the report and coding includes:
+   1. https://www.kaggle.com/sudalairajkumar/simple-exploration-notebook-mercedes
+   2. https://www.kaggle.com/hakeem/stacked-then-averaged-models-0-5697
+   3. https://www.kaggle.com/frednavruzov/baselines-to-start-with-lb-0-56
+   4. https://www.kaggle.com/anokas/mercedes-eda-xgboost-starter-0-55
 
