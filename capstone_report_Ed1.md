@@ -88,10 +88,10 @@ The dataset provided from the competition has total 376 features. all of them ar
 As we can see from Fig 2. below, all features are anonymized, so we wouldn't be able to know what would be the underlying meaning of each feature.
 
 <img src="http://instanas.com/gh_work/0_1_Count.png">
+Count of binary value by each variable
 
-Besides, we also found some cateogorical variable has only one value. 
 
-<Fig 3. Add a visual of the constant variable>
+As we can see from the above graph, we also have some cateogorical variable has only one value. 
 
 The datasets has split into two separate sets -- training set and test set. Eact set of data has total 4209 datapoint.
 
@@ -102,7 +102,8 @@ The datasets has split into two separate sets -- training set and test set. Eact
 #### Start from the "y"
 We start by look at the y by plotting against the ID
 
-<Fig 4. plot ID vs y>
+<img src="http://instanas.com/gh_work/YvsIDJointPlot.png">
+Y vs ID joint plot
 
 From the data, there is no obvious relationship between the ID and "Y".
 
@@ -228,6 +229,9 @@ Following are the score for the initial model:
 | ------------- |:-------------:| -----:|
 | Xgb with OHE 	| 0.6365 | -0.48733 | -0.5714 |
 
+<img src="http://instanas.com/gh_work/XGB_OHE.png">
+Y_Actual vs Y_Predicted in train data
+
 #### Subsequent solution testing  -- Xgboost with label encoding
 Follow on the initial solution, I tried to use label encoding on the dataset with ICA and PCA. 
 
@@ -236,7 +240,8 @@ The result as following:
 | ------------- |:-------------:| -----:|
 | Xgb with LE 	| 0.6522 | 0.5648 | 0.5462 |
 
-<Add scatter plot -- actual vs predicted>
+<img src="http://instanas.com/gh_work/XGB_LE.png">
+Y_Actual vs Y_Predicted in train data
 
 As we can see from above, it significantly improve the R^2 score.
 From the above results, one of the possible reason that we would see such improvement is that the category within each variables seems to have ordinality and thus explain the improvement in predictability.
@@ -253,7 +258,6 @@ One of the interesting observation of the stacked model is that we get better re
 From this observation, we mostl likely have already slightly over-fitted the data as compare to the xgboost.
 
 <Add scatter plot -- actual vs predicted>
-
 
 
 
