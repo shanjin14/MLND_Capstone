@@ -9,7 +9,7 @@ July 15th, 2017
 
 #### Domain Background of Machine Learining in manufacturing testing.
 The proposal domain is in the manufacturing testing field. In most of the mass production manufacturing, testing are part of the manufacturing process which help to ensure product quality and reliability. At the same time, testing also involve higher cost to the manufacturer and time consuming. 
-The proposed project is to examine the prediction of the testing time required based on the all the available features. The proposed project is based on the Kaggle competitions: https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/
+The proposed project is to examine the prediction of the testing time required based on the all the available features. The proposed project is based on the Kaggle competitions: [Mercedes-Benz Greener Manufacturing] (https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/).
 We will use the data from this competition to examine different machine learning method in making prediction.
 
 
@@ -19,7 +19,7 @@ We will use the data from this competition to examine different machine learning
 The problem we tried to solve is to predict the test time (the 'y') required based on all the featured provides (total 376 features).
 
 #### Measurement 
-Based on the competition request, we found out that the prediction is scored based on R^2 value (Coefficient of Determination), so we will use the same metric to score and compare our model
+Based on the competition request, we found out that the prediction is scored based on R^2 value (Coefficient of Determination), so we will use the same metric to score and compare our model.
 
 #### Anonimyzation of the dataset column name and data processing
 As the dataset column name are anonymized, so we wouldn't be able to know the underlying meaning of each variable. It creates some issues for us to understand well the data, such as if we have done the Principal Component Analysis, we wouldn't be able to know what the first few component would actually mean.
@@ -64,7 +64,7 @@ For the coming discussion, I will focus the discussion on three of the most comm
 	It capture the propotion of variance that explained by the model. One of the key feature of R^2 is that it could be negative value. It means that the total predicted error from the model are higher than the total variance of the data.
 
 	
-Since we are mainly focus on boosting or ensemble method, all 3 of them should be feasible for the modelling.If we plan to use any model that are using gradient descent algorithm such as Neural Network, I think MSE is more appropriate as it mathematically differentiable.
+Since we are mainly focus on boosting or ensemble method, all 3 of them should be feasible for the modelling.If we plan to use any model that are using gradient descent algorithm such as Neural Network, I think MSE is more appropriate as it is mathematically differentiable.
 
 
 ## II. Analysis
@@ -85,15 +85,16 @@ The dataset provided from the competition has total 376 features. all of them ar
 |	X6 |	12 |	12 |
 |	X8 |	25 |	25 |
 
-As we can see from Fig 2. below, all features are anonymized, so we wouldn't be able to know what would be the underlying meaning of each feature.
+
+<img src="http://instanas.com/gh_work/DataSample.JPG">
+As we can see from table above, we can see that all features are anonymized.So, we wouldn't be able to know what would be the underlying meaning of each feature.
 
 <img src="http://instanas.com/gh_work/0_1_Count.png">
 Count of binary value by each variable
 
-
 As we can see from the above graph, we also have some cateogorical variable has only one value. 
 
-The datasets has split into two separate sets -- training set and test set. Eact set of data has total 4209 datapoint.
+Finally, the datasets has split into two separate sets -- training set and test set. Eact set of data has total 4209 datapoint.
 
 
 
@@ -279,18 +280,17 @@ We run the benchmark model - Random Forest. The results shows that:
 
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
 | ------------- |:-------------:| -----:| -----:|
-| Random Forest | 0.55 | 0.4963 | 0.4468 |
+| Random Forest | 0.92 | 0.4963 | 0.4468 |
 
-<Add scatter plot -- actual vs predicted>
-
+<img src="http://instanas.com/gh_work/RF.png">
+Y_Actual vs Y_Predicted in train data
 
 #### Comparing to the benchmark model
 Comparing our final model results as compare to the benchmark result, we can see that our final selected model performed relatively well compare to the benchmark model.
 
-Based on the current private leaderboard No 1 team results at 0.5555. The final selected model is significant as a starting point model to know what would be the estimate test time would be given the results.
+Based on the current private leaderboard No 1 team results at 0.5555, the final selected model is considered acceptable as a starting point model to know what would be the estimated test time would be given all the variables.
 
-From the data, we've seen one outlier data point we extreme high test time. Based on the unsupervised learning, we found out that it 
-Further investigation in such outlier would help us to unveil insight in optimizing the model and the operational issue behind it.
+From the data, we've seen one outlier data point with extreme high test time. Further investigation in such outlier would help us to unveil insight in optimizing the model and the operational issue behind it.
 
 
 ## V. Conclusion
@@ -316,8 +316,10 @@ This is also my first time participating the kaggle competition. It has been a f
 
 ### Improvement
 
-During the implementation and research, I found one of the new exploratory data analysis method called t-SNE(t-distributed Stochastic Neighbor Embedding) <sup>6</sup>, which can help us to visualize high dimension data in lower dimension space.
-I believe we could make further improvement in data pre-processing if we able to extract some pattern from the data via this method.
+During the implementation and research, I found one of the new exploratory data analysis method called t-SNE(t-distributed Stochastic Neighbor Embedding) <sup>6</sup>, which can help us to visualize high dimension data in lower dimension space. I believe we could make further improvement in data pre-processing if we able to extract some pattern from the data via this method.
+
+Other than that, I would think we could run unsupervised learning such as k-mean clustering to see if have any natural clustering pattern for those datapoints with high test time(high "y").
+
 Besides, Another approach that I think that may worth to test is deep learning. I believe it would be worthwhile compare its result versus xgboost.
 
 
