@@ -310,12 +310,15 @@ Both of them are widely used in the kaggle community.
 The other interesting aspect of this project is that all the independent variable are anonymized. It means that we would need to rely on statistical method to understand more about the data. Method that we used 
 Yes, the final model fit my expectatiosn in terms of the prediction outcome and the overall implementation process can be generalized for similar prediction problems.
 
+This is also my first time participating the kaggle competition. It has been a fruitful experience on how much I learned during the competition.
+
+
 
 ### Improvement
 
 During the implementation and research, I found one of the new exploratory data analysis method called t-SNE(t-distributed Stochastic Neighbor Embedding) <sup>6</sup>, which can help us to visualize high dimension data in lower dimension space.
 I believe we could make further improvement in data pre-processing if we able to extract some pattern from the data via this method.
-Besides, Another approach that I think that may worth to test is deep learning. I believe it could be work compare its result versus xgboost.
+Besides, Another approach that I think that may worth to test is deep learning. I believe it would be worthwhile compare its result versus xgboost.
 
 
 
@@ -331,6 +334,7 @@ Besides, Another approach that I think that may worth to test is deep learning. 
 6. [t-distributed Stochastic Neighbor Embedding Wikipedia] (https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
 
 Besides above references, the coding and development has referred a lot of public sharing in kaggle such as :
+
 7. [Kaggle - Mercedes-Benz Greener Manufacturing Kernels] (https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/kernels)
 
 **Before submitting, ask yourself. . .**
