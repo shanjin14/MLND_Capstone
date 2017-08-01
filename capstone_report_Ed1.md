@@ -4,7 +4,6 @@ George Seah
 July 15th, 2017
 
 ## I. Definition
-_(approx. 1-2 pages)_
 
 ### Project Overview
 
@@ -17,9 +16,7 @@ We will use the data from this competition to examine different machine learning
 
 ### Problem Statement
 
-
 The problem we tried to solve is to predict the test time (the 'y') required based on all the featured provides (total 376 features).
-
 
 #### Measurement 
 Based on the competition request, we found out that the prediction is scored based on R^2 value (Coefficient of Determination), so we will use the same metric to score and compare our model
@@ -52,7 +49,7 @@ Based on the research in sklearn metrics<sup>1</sup>, we can see that following 
 4. R^2
 5. Explained Variance Score
 
-For the coming discussion, I will focus 3 of the most common metrics -- MAE , MSE, and R^2
+For the coming discussion, I will focus the discussion on three of the most common metrics -- MAE , MSE, and R^2
 
 1. Mean Absolute Error (MAE) - 
 	
@@ -79,11 +76,20 @@ _(approx. 2-4 pages)_
 
 The dataset provided from the competition has total 376 features. all of them are cateogorical. There are 8 variables are multi-categorical, where X4 has the smallest category count at 4 and X0 has the highest category count at 49.
 
-<Fig 1. add picture of the table of count distinct category >
+|ColumnName |	TestDataUniqueValue |	TrainDataUniqueValue |
+| ------------- |:-------------:| -----:|
+|	X0 |	49 |	47 |
+|	X1 |	27 |	27 |
+|	X2 |	45 |	44 |
+|	X3 |	7 |	7 |
+|	X4 |	4 |	4 |
+|	X5 |	32 |	29 |
+|	X6 |	12 |	12 |
+|	X8 |	25 |	25 |
 
 As we can see from Fig 2. below, all features are anonymized, so we wouldn't be able to know what would be the underlying meaning of each feature.
 
-<Fig 2. Add a picture of the visualization of the table set of data>
+<img src="http://instanas.com/gh_work/0_1_Count.png">
 
 Besides, we also found some cateogorical variable has only one value. 
 
@@ -213,10 +219,6 @@ We also run the benchmark model - Random Forest, the implementation as following
 
 
 ### Refinement
-In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
-- _Has an initial solution been found and clearly reported?_
-- _Is the process of improvement clearly documented, such as what techniques were used?_
-- _Are intermediate and final solutions clearly reported as the process is improved?_
 
 #### Initial solution
 My initial solution is to use xgboost with one-hot encoding for all the variables and excluding the ID. 
@@ -225,14 +227,14 @@ The rationale is that ID should be just an indexing of the each data row and sho
 After running xgboost optimized with number of trees, the result is not good.
 Following are the score for the initial model:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Xgb with OHE 	|  |  |  |
+| Xgb with OHE 	| 0.6365 | -0.48733 | -0.5714 |
 
 #### Subsequent solution testing  -- Xgboost with label encoding
 Follow on the initial solution, I tried to use label encoding on the dataset with ICA and PCA. 
 
 The result as following:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Xgb with LE 	|  |  |  |
+| Xgb with LE 	| 0.6522 | 0.5648 | 0.5462 |
 
 <Add scatter plot -- actual vs predicted>
 
@@ -243,9 +245,8 @@ From the above results, one of the possible reason that we would see such improv
 The stacked model is combining various model for the predictions.
 
 The result as following:
-The result as following:
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Stacked Model |  |  |  |
+| Stacked Model |  | 0.5767 | 0.5458 |
 
 One of the interesting observation of the stacked model is that we get better result in both cross validation and public leaderboard scores, but not the private leaderboard.
 From this observation, we mostl likely have already slightly over-fitted the data as compare to the xgboost.
@@ -256,14 +257,11 @@ From this observation, we mostl likely have already slightly over-fitted the dat
 
 
 ## IV. Results
-_(approx. 2-3 pages)_
 
 ### Model Evaluation and Validation
 
-
 Based on the cross validation scores, we selected the xgboost with label encoding as the final model as it has the highest R^2 performance scores.
 It has the highest private leaderboard score, indicating that it has better generalization on the unseen data
-
 
 
 ### Justification
@@ -271,7 +269,7 @@ It has the highest private leaderboard score, indicating that it has better gene
 #### Benchmark model -- Random Forest
 We run the benchmark model - Random Forest. The results shows that 
 | Model Name 	| Cross Validation Score | Public Leaderboard | Private Leaderboard |
-| Random Forest |  |  |  |
+| Random Forest |  | 0.4963 | 0.4468 |
 
 <Add scatter plot -- actual vs predicted>
 
